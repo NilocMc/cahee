@@ -7,7 +7,7 @@ $accentcolor: #e10011;
     padding-left: $left;
 }
 
-@import '../bootstrap-4.0.0/scss/bootstrap-grid.scss';
+@import 'scss/bootstrap-grid.scss';
 
 html {
     font-size: 16px;
