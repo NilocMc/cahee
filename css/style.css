@@ -1650,21 +1650,6 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     height: 100%; }
-  .header .logo {
-    display: inline-block; }
-  .header .nav {
-    padding: 10px 0;
-    float: right;
-    line-height: 2; }
-    .header .nav a {
-      text-decoration: none;
-      color: #303030;
-      padding-top: 55px;
-      text-transform: uppercase;
-      font-weight: 700;
-      padding: 3px 5px; }
-      .header .nav a:hover {
-        border-top: 3px solid red; }
   .header__text {
     width: 50%;
     min-width: 320px;
@@ -1685,6 +1670,48 @@ body {
     -ms-flex-item-align: start;
     align-self: flex-start;
     background-color: #ff6033; }
+
+.logo {
+  display: inline-block; }
+
+.nav {
+  padding: 10px 0;
+  float: right;
+  line-height: 2; }
+  .nav a {
+    text-decoration: none;
+    color: #303030;
+    padding-top: 55px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 3px 5px; }
+    .nav a:hover {
+      border-top: 3px solid red; }
+
+.navicon {
+  display: none;
+  padding: 23px 20px;
+  cursor: pointer;
+  -webkit-transform-origin: 32px 24px;
+  -ms-transform-origin: 32px 24px;
+  transform-origin: 32px 24px; }
+  .navicon div {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.87); }
+  .navicon div:before,
+  .navicon div:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.87);
+    position: absolute; }
+  .navicon div:before {
+    top: -7px; }
+  .navicon div:after {
+    top: 7px; }
 
 .scroll {
   text-align: center;
@@ -1715,9 +1742,10 @@ body {
     -ms-flex-item-align: center;
     align-self: center;
     padding: 20px; }
-  .about .berries {
-    max-width: 100%;
-    height: auto; }
+
+.berries {
+  max-width: 100%;
+  height: auto; }
 
 .services {
   background-color: #70bfff;
@@ -1894,68 +1922,69 @@ body {
     padding-left: 50px; }
     .contact__info p {
       line-height: 1; }
-  .contact .form {
-    padding-right: 50px; }
-    .contact .form input::-webkit-input-placeholder,
-    .contact .form textarea::-webkit-input-placeholder {
-      color: white;
-      font-weight: 400; }
-    .contact .form input:-ms-input-placeholder,
-    .contact .form textarea:-ms-input-placeholder {
-      color: white;
-      font-weight: 400; }
-    .contact .form input::-ms-input-placeholder,
-    .contact .form textarea::-ms-input-placeholder {
-      color: white;
-      font-weight: 400; }
-    .contact .form input::placeholder,
-    .contact .form textarea::placeholder {
-      color: white;
-      font-weight: 400; }
-    .contact .form input:focus::-webkit-input-placeholder,
-    .contact .form textarea::focus:placeholder,
-    .contact .form input:hover::-webkit-input-placeholder,
-    .contact .form textarea::hover:placeholder {
-      font-weight: 900;
-      color: green; }
-    .contact .form input:focus:-ms-input-placeholder,
-    .contact .form textarea::focus:placeholder,
-    .contact .form input:hover:-ms-input-placeholder,
-    .contact .form textarea::hover:placeholder {
-      font-weight: 900;
-      color: green; }
-    .contact .form input:focus::-ms-input-placeholder,
-    .contact .form textarea::focus:placeholder,
-    .contact .form input:hover::-ms-input-placeholder,
-    .contact .form textarea::hover:placeholder {
-      font-weight: 900;
-      color: green; }
-    .contact .form input:focus::placeholder,
-    .contact .form textarea::focus:placeholder,
-    .contact .form input:hover::placeholder,
-    .contact .form textarea::hover:placeholder {
-      font-weight: 900;
-      color: green; }
-    .contact .form input,
-    .contact .form textarea {
-      width: 100%;
-      padding: 15px;
-      background: rgba(0, 196, 196, 0.5);
-      outline: none;
-      color: white;
-      border: none;
-      border-bottom: none;
-      margin-bottom: 15px;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
-    .contact .form input {
-      height: 50px; }
-    .contact .form textarea {
-      height: 150px; }
-    .contact .form input:hover,
-    .contact .form textarea:hover {
-      background: #00c4c4; }
+
+.form {
+  padding-right: 50px; }
+  .form input::-webkit-input-placeholder,
+  .form textarea::-webkit-input-placeholder {
+    color: white;
+    font-weight: 400; }
+  .form input:-ms-input-placeholder,
+  .form textarea:-ms-input-placeholder {
+    color: white;
+    font-weight: 400; }
+  .form input::-ms-input-placeholder,
+  .form textarea::-ms-input-placeholder {
+    color: white;
+    font-weight: 400; }
+  .form input::placeholder,
+  .form textarea::placeholder {
+    color: white;
+    font-weight: 400; }
+  .form input:focus::-webkit-input-placeholder,
+  .form textarea::focus:placeholder,
+  .form input:hover::-webkit-input-placeholder,
+  .form textarea::hover:placeholder {
+    font-weight: 900;
+    color: green; }
+  .form input:focus:-ms-input-placeholder,
+  .form textarea::focus:placeholder,
+  .form input:hover:-ms-input-placeholder,
+  .form textarea::hover:placeholder {
+    font-weight: 900;
+    color: green; }
+  .form input:focus::-ms-input-placeholder,
+  .form textarea::focus:placeholder,
+  .form input:hover::-ms-input-placeholder,
+  .form textarea::hover:placeholder {
+    font-weight: 900;
+    color: green; }
+  .form input:focus::placeholder,
+  .form textarea::focus:placeholder,
+  .form input:hover::placeholder,
+  .form textarea::hover:placeholder {
+    font-weight: 900;
+    color: green; }
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 196, 196, 0.5);
+    outline: none;
+    color: white;
+    border: none;
+    border-bottom: none;
+    margin-bottom: 15px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .form input {
+    height: 50px; }
+  .form textarea {
+    height: 150px; }
+  .form input:hover,
+  .form textarea:hover {
+    background: #00c4c4; }
 
 .footer {
   padding: 35px 0;
@@ -2010,3 +2039,86 @@ button {
 
 .subtext {
   margin-bottom: 30px; }
+
+@media (max-width: 940px) {
+  .services__content {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2; }
+  .services__name {
+    background-position: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .services__item {
+    margin-left: auto;
+    margin-right: auto; }
+  .blog__hidden {
+    display: none; } }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .nav,
+  .logo {
+    width: 100%;
+    text-align: center; }
+  .about__img {
+    text-align: center; }
+  .berries {
+    max-width: 70%; }
+  .form {
+    padding-right: 0; }
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center; } }
+
+@media (max-width: 412px) {
+  h1 {
+    font-size: 60px; }
+  .logo {
+    width: calc(100% - 70px); }
+  .nav {
+    width: 70px;
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1; }
+  .navicon {
+    display: block;
+    z-index: 20; }
+  .nav__list {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    padding: 120px 18px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    z-index: 1; }
+    .nav__list.open {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background: rgba(211, 211, 211, 0.8);
+      -webkit-transition: background .4 ease;
+      -o-transition: background .4 ease;
+      transition: background .4 ease; }
+  .header__head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .services__item {
+    max-width: calc(100% - 40px); }
+  .services__content, .services__name {
+    -ms-flex-preferred-size: 10px;
+    flex-basis: 10px; }
+  .button__container {
+    text-align: center;
+    margin-top: 20px; } }

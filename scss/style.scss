@@ -45,25 +45,6 @@ body {
         flex-direction: column;
         height: 100%;
     }
-    .logo {
-        display: inline-block;
-    }
-    .nav {
-        padding: 10px 0;
-        float: right;
-        line-height: 2;
-        a {
-            text-decoration: none;
-            color: $maincolor;
-            padding-top: 55px;
-            text-transform: uppercase;
-            font-weight: 700;
-            padding: 3px 5px;
-            &:hover {
-                border-top: 3px solid red;
-            }
-        }
-    }
     &__text {
         width: 50%;
         min-width: 320px;
@@ -78,6 +59,58 @@ body {
     &__button {
         align-self: flex-start;
         background-color: #ff6033;
+    }
+}
+
+.logo {
+    display: inline-block;
+}
+
+.nav {
+    padding: 10px 0;
+    float: right;
+    line-height: 2;
+    a {
+        text-decoration: none;
+        color: $maincolor;
+        padding-top: 55px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 3px 5px;
+        &:hover {
+            border-top: 3px solid red;
+        }
+    }
+}
+
+.navicon {
+    display: none;
+    padding: 23px 20px;
+    cursor: pointer;
+    transform-origin: 32px 24px;
+    & div {
+        position: relative;
+        width: 20px;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.87);
+    }
+
+    & div:before,
+    & div:after {
+        display: block;
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.87);
+        position: absolute;
+    }
+
+    & div:before {
+        top: -7px;
+    }
+
+    & div:after {
+        top: 7px;
     }
 }
 
@@ -106,10 +139,11 @@ body {
         align-self: center;
         padding: 20px;
     }
-    .berries {
-        max-width: 100%;
-        height: auto;
-    }
+}
+
+.berries {
+    max-width: 100%;
+    height: auto;
 }
 
 .services {
@@ -284,47 +318,49 @@ body {
             line-height: 1;
         }
     }
-    .form {
-        padding-right: 50px;
+}
 
-        input::placeholder,
-        textarea::placeholder {
-            color: white;
-            font-weight: 400;
-        }
+.form {
+    padding-right: 50px;
 
-        input:focus::placeholder,
-        textarea::focus:placeholder,
-        input:hover::placeholder,
-        textarea::hover:placeholder {
-            font-weight: 900;
-            color: green;
-        }
+    input::placeholder,
+    textarea::placeholder {
+        color: white;
+        font-weight: 400;
+    }
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(0, 196, 196, .5);
-            outline: none;
-            color: white;
-            border: none;
-            border-bottom: none;
-            margin-bottom: 15px;
-            transition: all 0.3s ease-in-out;
-        }
-        input {
-            height: 50px;
-        }
-        textarea {
-            height: 150px;
-        }
-        input:hover,
-        textarea:hover {
-            background: rgba(0, 196, 196, 1);
-        }
+    input:focus::placeholder,
+    textarea::focus:placeholder,
+    input:hover::placeholder,
+    textarea::hover:placeholder {
+        font-weight: 900;
+        color: green;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        background: rgba(0, 196, 196, .5);
+        outline: none;
+        color: white;
+        border: none;
+        border-bottom: none;
+        margin-bottom: 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    input {
+        height: 50px;
+    }
+    textarea {
+        height: 150px;
+    }
+    input:hover,
+    textarea:hover {
+        background: rgba(0, 196, 196, 1);
     }
 }
+
 
 .footer {
     padding: 35px 0;
@@ -386,4 +422,105 @@ button {
 
 .subtext {
     margin-bottom: 30px;
+}
+
+
+
+@media (max-width: 940px) {
+    .services {
+        &__content {
+            order: 2;
+        }
+        &__name {
+            background-position: center;
+            justify-content: center;
+        }
+        &__item {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .blog {
+        &__hidden {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .nav,
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about {
+        &__img {
+            text-align: center;
+        }
+    }
+
+    .berries {
+        max-width: 70%;
+    }
+
+    .form {
+        padding-right: 0;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 412px) {
+    h1{
+        font-size: 60px;
+    }
+    .logo {
+        width: calc(100% - 70px);
+    }
+    .nav {
+        width: 70px;
+        order: -1;
+    }
+    .navicon {
+        display: block;
+        z-index: 20;
+    }
+    .nav__list {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        padding: 120px 18px;
+        flex-direction: column;
+        justify-content: space-around;
+        z-index: 1;
+        &.open {
+            display: flex;
+        background: rgba(211, 211, 211, .8);
+        transition: background .4 ease;
+        }
+    }
+    .header__head {
+        display: flex;
+    }
+    .services__item{
+        max-width: calc(100% - 40px);
+    }
+    .services__content, .services__name{
+        flex-basis: 10px;
+    }
+    .subscribe{
+        
+    }
+    .button__container{
+        text-align: center;
+        margin-top: 20px;
+    }
 }

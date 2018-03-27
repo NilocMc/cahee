@@ -16,7 +16,7 @@
 <body>
     <header class="header">
         <div class="container header__block">
-            <div>
+            <div class="header__head">
                 <a href="#">
                     <picture class="logo">
                         <source type="image/svg+xml" srcset="img/logo.svg">
@@ -24,12 +24,18 @@
                     </picture>
                 </a>
                 <nav class="nav">
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">Services</a>
-                    <a href="">Gallery</a>
-                    <a href="">Blog</a>
-                    <a href="">Contact</a>
+                   
+                    <div class="nav__list" id="nav__list">
+                        <a href="">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                     <div class="navicon" id="navicon">
+                        <div></div>
+                    </div>
                 </nav>
             </div>
             <div class="header__text">
@@ -54,7 +60,7 @@
             </div>
         </div>
     </header>
-    <section id="about" class="about">
+    <section id="about" class="about" id="about">
         <div class="container about__container">
             <div class="about__img">
                 <img class="berries" src="img/berry2.png" alt="berries">
@@ -66,7 +72,7 @@
             </div>
         </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <div class="container services__container">
             <div class="services__content">
                 <div class="services__item">
@@ -105,7 +111,7 @@
             </div>
         </div>
     </section>
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <div class="container">
             <h1>Gallery</h1>
             <div class=" subtext col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3">
@@ -142,12 +148,12 @@
             <div class="col-12 col-sm-8 col-md-7 col-lg-6">
                 <input class="subscribe__input" type="email" placeholder=" Your email address...">
             </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-4 button__container">
                 <button type="submit">Subscribe</button>
             </div>
         </form>
     </section>
-    <section class="blog">
+    <section class="blog" id="blog">
         <div class="container">
             <h1>Blog</h1>
             <div class="row">
@@ -180,7 +186,7 @@
                         <img class="blog__img" src="img/soup.png" alt="soup">
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-6 col-lg-4 blog__hidden">
                     <div class="blog__item">
                         <div class="blog__date">10
                             <br><span>NOV</span>
@@ -196,7 +202,7 @@
             <button class="blog__button">View More</button>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="container">
             <h1>Contact</h1>
             <div class="row">
@@ -206,20 +212,19 @@
             </div>
             <div>
                 <div class="row">
-                    
-                <form id="form" class="form col-md-6">
-                    <input id="name" type="text" placeholder="NAME">
-                    <input id="email" type="text" placeholder="E-MAIL">
-                    <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-                </form>
-                <div class="contact__info col-md-6">
-                    <h5>Address</h5>
-                    <p>123 City Name, Street, City, Country</p>
-                    <h5>Email</h5>
-                    <p>cahee@domain.com</p>
-                    <h5>Phone</h5>
-                    <p>+012 345 6789</p>
-                </div>
+                    <form id="form" class="form col-12 col-sm-6">
+                        <input id="name" type="text" placeholder="NAME">
+                        <input id="email" type="text" placeholder="E-MAIL">
+                        <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+                    </form>
+                    <div class="contact__info col-12 col-sm-6">
+                        <h5>Address</h5>
+                        <p>123 City Name, Street, City, Country</p>
+                        <h5>Email</h5>
+                        <p>cahee@domain.com</p>
+                        <h5>Phone</h5>
+                        <p>+012 345 6789</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,6 +241,17 @@
             <p>Made with <span class="love">love</span> by <a href="#">Colin</a></p>
         </div>
     </footer>
+
+    <script>
+        var navicon = document.getElementById("navicon");
+        var list = document.getElementById("nav__list");
+
+        navicon.addEventListener("click", open);
+
+        function open(){
+            list.classList.toggle('open');
+        }
+    </script>
 </body>
 
 </html>
